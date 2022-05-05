@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build-image
+    pull: if-not-exists
+    image: plugins/docker
+    privileged: true
+    settings:
+      dockerfile: src/main/docker/all.Dockerfile
+      repo: notthatbad/imperfect-future
+      tag: ${DRONE_BUILD_NUMBER}
+      username: notthatbad
+      password:
+        from_secret: docker-hub-password
+      debug: true
