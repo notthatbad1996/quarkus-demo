@@ -1,5 +1,5 @@
 ## Stage 1 : build with gradle builder image with native capabilities
-FROM notthatbad/graalvm-gradle:20220419 AS build
+FROM notthatbad/graalvm-gradle:20220505 AS build
 COPY build.gradle /code/
 COPY settings.gradle /code/
 COPY gradle.properties /code/
